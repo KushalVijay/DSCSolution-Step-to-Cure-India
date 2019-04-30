@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 600px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <h3>Heading</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+    // Initialize and add the map
+    function initMap() {
+  // The location of Uluru
+  var pos = {lat: {{ latitude }}, lng: {{ longitude }} };
+  <!--var uluru = {lat: -25.344, lng: 131.036};-->
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 12, center: pos});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: pos, map: map});
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <br><br><br><br><br>
+<div class="container">
+    <table class="table table-hover table-dark ">
+  <thead>
+    <tr>
+      <th scope="col"><strong>S.No.</strong></th>
+      <th scope="col">Diseases</th>
+      <th scope="col">Cause</th>
+      <th scope="col">Deaths</th>
+      <th scope="col">Risk Factor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Malaria</td>
+      <td>{{ malaria_cause }}</td>
+      <td>{{ malaria_deaths }}</td>
+      <td>{{ malaria_risk_factor }}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Tuberculosis</td>
+      <td>{{tuberculosis_cause}}</td>
+      <td>{{tuberculosis_deaths}}</td>
+      <td>{{tuberculosis_risk_factor }}</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Malnutrition</td>
+      <td>{{ malnutrition_cause}}</td>
+      <td>{{ malnutrition_deaths }}</td>
+      <td>{{ malnutrition_risk_factor }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+    <div class="container">
+      <div class="row">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Malaria</strong></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Read More</a>
+
+      </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Tuberculosis</strong></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Read More</a>
+
+      </div>
+      </div>
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Malnutrition</strong></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Read More</a>
+
+      </div>
+        </div>
+      </div>
+</div>
+    </div>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-EF53P7f75XORs1TxMWAQumJwLZ5Qlc&callback=initMap">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
